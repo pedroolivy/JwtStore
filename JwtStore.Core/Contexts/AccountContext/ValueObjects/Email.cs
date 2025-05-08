@@ -1,6 +1,7 @@
 ﻿using System.Text.RegularExpressions;
-using JwtStore.Core.SharedContext.Extensions;
-using JwtStore.Core.SharedContext.ValueObjects;
+using JwtStore.Core.Contexts.AccountContext.ValueObjects;
+using JwtStore.Core.Contexts.SharedContext.Extensions;
+using JwtStore.Core.Contexts.SharedContext.ValueObjects;
 
 namespace JwtStore.Core.AccountContext.ValueObjects
 {

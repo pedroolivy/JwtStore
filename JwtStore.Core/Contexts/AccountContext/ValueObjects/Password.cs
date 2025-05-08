@@ -1,7 +1,7 @@
 ﻿using System.Security.Cryptography;
-using JwtStore.Core.SharedContext.ValueObjects;
+using JwtStore.Core.Contexts.SharedContext.ValueObjects;
 
-namespace JwtStore.Core.AccountContext.ValueObjects
+namespace JwtStore.Core.Contexts.AccountContext.ValueObjects
 {
     public class Password : ValueObject
     {
@@ -26,7 +26,7 @@ namespace JwtStore.Core.AccountContext.ValueObjects
         bool includeSpecialChars = true,
         bool upperCase = false)
         {
-            var chars = includeSpecialChars ? (Valid + Special) : Valid;
+            var chars = includeSpecialChars ? Valid + Special : Valid;
             var startRandom = upperCase ? 26 : 0;
             var index = 0;
             var res = new char[length];
