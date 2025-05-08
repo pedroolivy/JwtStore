@@ -5,7 +5,18 @@ namespace JwtStore.Core.AccountContext.Entities
 {
     public class User : Entity
     {
-        public Email Email { get; private set; }
+        protected User() { }
+
+        public User(Email email, string? password)
+        {
+            Email = email;
+            Password = new Password(password);
+        }
+
+        public string Name { get; private set; } = string.Empty;
+        public Email Email { get; private set; } = null!;
+        public Password Password { get; private set; } = null!;
+        public string Image { get; private set; } = string.Empty;
     }
 }
 
