@@ -19,7 +19,10 @@ namespace JwtStore.Api.Extensions
                 Request request,
                 IRequestHandler<Request, Response> handler) =>
             {
-                
+                var result = await handler.Handle(request, new CancellationToken());
+                return result.IsSuccess
+                    ? Results.Created($"api/v1/users/{result.Data?.Id}", result)
+                    : Results.Json(result, statusCode: result.Status);
             });
         }
     }
